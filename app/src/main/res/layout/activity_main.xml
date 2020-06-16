@@ -1,44 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical">
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    tools:context=".MainActivity">-->
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/background"
-        android:scaleType="centerCrop"
-        android:id="@+id/MainBackground">
-    </ImageView>
+    <!--    <ImageView-->
+    <!--        android:id="@+id/MainBackground"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:scaleType="centerCrop"-->
+    <!--        android:src="@drawable/background" />-->
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/background"
-        android:scaleType="centerCrop"
-        android:id="@+id/SecondBackground">
-    </ImageView>
+    <!--    <ImageView-->
+    <!--        android:id="@+id/SecondBackground"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:scaleType="centerCrop"-->
+    <!--        android:src="@drawable/background" />-->
 
+    <!--    <TextView-->
+    <!--        android:id="@+id/Name"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_centerHorizontal="true"-->
+    <!--        android:layout_marginTop="150dp"-->
+    <!--        android:text="@string/GameName"-->
+    <!--        android:textSize="48sp" />-->
+
+    <!--    <ImageButton-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@id/Name"-->
+    <!--        android:layout_centerHorizontal="true"-->
+    <!--        android:layout_marginTop="64dp"-->
+    <!--        android:background="@android:color/transparent"-->
+    <!--        android:src="@drawable/play" />-->
+    <!--</RelativeLayout>-->
     <TextView
+        android:id="@+id/pause"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/GameName"
-        android:textSize="48sp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
-        android:id="@+id/Name"
-        ></TextView>
+        android:layout_alignParentRight="true"
+        android:layout_gravity="right"
+        android:text="PAUSE"
+        android:textSize="32sp"
+        android:textStyle="bold" />
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/Name"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="64dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/play">
-    </ImageButton>
-</RelativeLayout>
+    <LinearLayout
+        android:id="@+id/addGameView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" />
+</LinearLayout>
