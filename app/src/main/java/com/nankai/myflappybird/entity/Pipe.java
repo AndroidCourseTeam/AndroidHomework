@@ -32,9 +32,9 @@ public class Pipe {
                 width + GameTool.getInstance().pipeWidth, topPipeHeight + height), null);
 
         int bottomPipeHeight = canvas.getHeight() / 2 - GameTool.getInstance().pipeCenterHeight / 2;
-        Bitmap bitmap1 = ResolvePhoto.getBitmap(mContext, R.drawable.pipe1,
+        Bitmap bitmap2 = ResolvePhoto.getBitmap(mContext, R.drawable.pipe1,
                 width + GameTool.getInstance().pipeWidth, bottomPipeHeight);
-        canvas.drawBitmap(bitmap1, null, new Rect(width, canvas.getHeight() - bottomPipeHeight + height,
+        canvas.drawBitmap(bitmap2, null, new Rect(width, canvas.getHeight() - bottomPipeHeight + height,
                 width + GameTool.getInstance().pipeWidth, canvas.getHeight()), null);
 
         pass[0] = topPipeHeight + height;

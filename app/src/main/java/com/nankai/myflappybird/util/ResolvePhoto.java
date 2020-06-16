@@ -21,16 +21,6 @@ public class ResolvePhoto {
         }
     }
 
-    public static Bitmap getBitmap(Context context, int drawableRes) {
-        try {
-            Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), drawableRes);
-            return bitmap;
-        } catch (Exception e) {
-            Log.e(TAG, "getBitmap " + e.toString());
-            return null;
-        }
-    }
-
     public static Paint getPaint() {
         if (paint == null) {
             paint = new Paint();

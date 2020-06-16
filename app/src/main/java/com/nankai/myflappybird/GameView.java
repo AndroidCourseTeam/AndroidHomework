@@ -185,10 +185,8 @@ class GameView extends SurfaceView implements Runnable, SurfaceHolder.Callback {
     private boolean startPass = false;
 
     private void isPass() {
-        Log.i(TAG, "isPass ddd" + pipe.getWidth()[0] + "   " + (bird.getRect().right) + "  " + pipe.getWidth()[1] + "   " + bird.getRect().left);
         if (pipe.getWidth()[0] <= (bird.getRect().right) && pipe.getWidth()[1] >= bird.getRect().left) {
             startPass = true;
-            Log.i(TAG, "isPass " + bird.getHeight() + "   " + pipe.getPass()[0] + "   " + pipe.getPass()[1]);
             if (birdHeight - bird.getBirdHeight() / 2 > pipe.getPass()[0] && birdHeight + bird.getBirdHeight() / 2 < pipe.getPass()[1]) {
                 Log.i(TAG, "isPass true");
             }
