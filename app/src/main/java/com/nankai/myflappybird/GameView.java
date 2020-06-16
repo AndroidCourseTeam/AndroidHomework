@@ -1,5 +1,6 @@
 package com.nankai.myflappybird;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -9,7 +10,8 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-
+import android.content.DialogInterface;
+import android.app.Activity;
 import com.nankai.myflappybird.entity.Background;
 import com.nankai.myflappybird.entity.Bird;
 import com.nankai.myflappybird.entity.Pipe;
@@ -161,7 +163,7 @@ class GameView extends SurfaceView implements Runnable, SurfaceHolder.Callback {
 
     // 加速度函数
     private int getH() {
-        h = h + 10;
+        h = h + 6;
         return h;
     }
 
@@ -193,10 +195,8 @@ class GameView extends SurfaceView implements Runnable, SurfaceHolder.Callback {
             // 游戏失败
             else {
                 Log.i(TAG, "isPass false");
-                rise = -1;
-                h = 0;
-                p = -1;
-                score = 0;
+                setRunning(false);
+                ((Activity)mainContest).finish();
             }
         }
         if (pipe.getWidth()[1] < bird.getRect().left && startPass) {
@@ -208,9 +208,9 @@ class GameView extends SurfaceView implements Runnable, SurfaceHolder.Callback {
 
     private void drawScore() {
         Paint paint = new Paint();
-        paint.setTextSize(32);
-        paint.setColor(Color.parseColor("#333333"));
-        mCanvas.drawText(score + "", mCanvas.getWidth() / 2, mCanvas.getHeight() / 3, paint);
+        paint.setTextSize(128);
+        paint.setColor(Color.parseColor("#ffffff"));
+        mCanvas.drawText(score + "", mCanvas.getWidth() / 2, mCanvas.getHeight() / 6, paint);
     }
 
     @Override
@@ -240,5 +240,8 @@ class GameView extends SurfaceView implements Runnable, SurfaceHolder.Callback {
     public void setResume() {
         isRunning = true;
         startGame = false;
+    }
+    public String getScore(){
+        return Integer.toString(score);
     }
 }
