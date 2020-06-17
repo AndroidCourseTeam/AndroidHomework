@@ -140,8 +140,10 @@ class GameView extends SurfaceView implements Runnable, SurfaceHolder.Callback {
         else if (birdHeight <= 0) {
             bird.draw(mCanvas, 0);
         }
-        //到底边
+        //到底边,鸟挂掉
         else {
+            setRunning(false);
+            ((Activity)mainContest).finish();
             birdHeight = mCanvas.getHeight() / 2;
             h = 0;
         }
